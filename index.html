@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerPoint Presentation</title>
+    <title>Interactive PowerPoint Presentation</title>
     <style>
         body, html {
             margin: 0;
@@ -11,6 +11,14 @@
             height: 100%;
             overflow: hidden;
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .header {
+            text-align: center;
+            padding: 15px;
+            background: #2c3e50;
+            color: white;
+            font-size: 18px;
         }
         .container {
             display: flex;
@@ -20,6 +28,7 @@
         .iframe-container {
             flex-grow: 1;
             position: relative;
+            background: white;
         }
         iframe {
             position: absolute;
@@ -31,22 +40,49 @@
         }
         .instructions {
             text-align: center;
-            padding: 10px;
-            background: #f0f0f0;
+            padding: 15px;
+            background: #34495e;
+            color: white;
             font-size: 14px;
+            line-height: 1.5;
+        }
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: #7f8c8d;
+        }
+        @media (max-width: 768px) {
+            .header {
+                font-size: 16px;
+                padding: 10px;
+            }
+            .instructions {
+                font-size: 12px;
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="header">
+            Interactive Presentation | Use touch/arrow keys to navigate
+        </div>
         <div class="iframe-container">
-            <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2F1drv.ms%2Ff%2Fs%21b5e722b817b0c68e%2FEsg30MNRe-hHp3ykFBXNccsB0oiwbRFD54oP8XGR6dNr8A%3Fe%3DKv7FbT" 
-                    frameborder="0" 
-                    allowfullscreen>
+            <div class="loading" id="loading">Loading presentation...</div>
+            <iframe 
+                src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2F1drv.ms%2Ff%2Fs%21b5e722b817b0c68e%2FEsg30MNRe-hHp3ykFBXNccsB0oiwbRFD54oP8XGR6dNr8A%3Fe%3DKv7FbT" 
+                frameborder="0" 
+                allowfullscreen
+                onload="document.getElementById('loading').style.display='none'"
+                onerror="document.getElementById('loading').innerText='Error loading presentation. Please try again later.'">
             </iframe>
         </div>
         <div class="instructions">
-            Pinch to zoom if needed • Use arrow keys to navigate
+            📱 Pinch to zoom | ← → Navigate with arrow keys | 🖱️ Click to interact
         </div>
     </div>
 </body>
