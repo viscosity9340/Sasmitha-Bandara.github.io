@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPoint Presentation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .iframe-container {
+            flex-grow: 1;
+            position: relative;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .instructions {
+            text-align: center;
+            padding: 10px;
+            background: #f0f0f0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="iframe-container">
+            <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2F1drv.ms%2Ff%2Fs%21b5e722b817b0c68e%2FEsg30MNRe-hHp3ykFBXNccsB0oiwbRFD54oP8XGR6dNr8A%3Fe%3DKv7FbT" 
+                    frameborder="0" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        <div class="instructions">
+            Pinch to zoom if needed • Use arrow keys to navigate
+        </div>
+    </div>
+</body>
+</html>
